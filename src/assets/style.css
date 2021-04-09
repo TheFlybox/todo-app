@@ -1,0 +1,422 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-size: 14px;
+	font-family: "Roboto", arial;
+	background: #f7f7f7;
+}
+
+.todo{
+	width: 800px;
+	padding: 3rem 1rem;
+	margin: 0 auto;
+}
+.todo .header{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 72px;
+	padding: 4rem 0rem;
+}
+.todo .header .title{
+	font-size: 42px;
+	color: #444;
+	text-decoration: none;
+	font-weight: 300;
+}
+.todo .header .title b{
+	color: #3be;
+}
+.searchbox{
+	margin-top: 1rem;
+	width: 100%;
+	position: relative;
+	display: flex;
+}
+.searchbox input{
+	width: 100%;
+	height: 48px;
+	padding: 0rem 1rem;
+	font-size: 18px;
+	font-family: inherit;
+	border: 1px solid #3be;
+	border-radius: 3px;
+	padding-left: 3.2rem;
+	margin-right: 1rem;
+}
+.searchbox i.icon{
+	position: absolute;
+	left: 1.2rem;
+	top: 50%;
+	transform: translate(0%, -50%);
+	font-size: 24px;
+	color: #777;
+}
+.searchbox .btn.sort{
+	padding: 0rem 1rem;
+	background: #fff;
+	border: 1px solid #3be;
+	color: #3be;
+	font-size: 24px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.searchbox .btn.sort:hover{
+	background: #3be;
+	color: #fff;
+}
+.info{
+	width: 100%;
+	text-align: right;
+	display: block;
+	font-size: 14px;
+}
+.info span{
+	color: #3be;
+	font-weight: 500;
+}
+.info .pw{
+	margin-right: 0.2rem;
+}
+
+
+
+.todo-list{
+	margin-top: 2rem;
+	width: 100%;
+    flex-wrap: wrap;
+    display: none;
+}
+.todo-list.active{
+    display: flex;
+}
+
+.menu{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-top: 1rem;
+}
+
+.menu .left{
+	margin-right: auto;
+}
+.menu .right{
+	margin-left: auto;
+}
+
+.menu .item{
+	margin-right: 1rem;
+	color: #444;
+	text-decoration: none;
+	font-size: 16px;
+}
+.menu .item:hover{
+	text-decoration: underline;
+}
+.menu .item.active{
+	color: #3be;
+	font-weight: 500;
+	text-decoration: underline;
+}
+
+i.material-icons{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* TODO LIST STYLE */
+.todo-list .todo-item{
+	flex: 100%;
+	width: 100%;
+	display: flex;
+	margin-bottom: 2rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 2px solid #ddd;
+}
+
+.todo-list .todo-item .left{
+	margin-right: auto;
+}
+
+.todo-list .todo-item .right{
+	margin-left: auto;
+}
+
+.todo-list .todo-item .title{
+	font-weight: 500;
+	font-size: 20px;
+	padding: 0.5rem 0rem 1rem;
+	cursor: pointer;
+}
+.todo-list .todo-item .title:hover{
+	text-decoration: underline;
+}
+
+.todo-list .todo-item .details{
+	display: flex;
+	font-size: 14px;
+	align-items: center;
+}
+.todo-list .todo-item .status{
+	margin-right: 1rem;
+	color: #fff;
+	padding: 0.3rem 0.5rem;
+	font-weight: 500;
+	border-radius: 4px;
+}
+.todo-list .todo-item .status i{
+	margin-right: 0.1rem;
+}
+.todo-list .todo-item .status.Pending{
+	background: #e74c3c;
+}
+.todo-list .todo-item .status.Complete{
+	background: #27ae60;
+}
+.todo-list .todo-item .status.Ongoing{
+	background: #f39c12;
+}
+.todo-list .todo-item .date{
+	padding: 0.3rem 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.todo-list .todo-item .date i{
+	margin-right: 0.2rem;
+}
+
+.todo-list .todo-item .description{
+	padding: 1rem 0rem;
+	font-size: 16px;
+	color: #444;
+}
+
+.todo-list .todo-item .tags{
+	width: 100%;
+	display: flex;
+}
+
+.todo-list .todo-item .tags .tag{
+	margin-right: 1rem;
+	border: 1px solid #ccc;
+	padding: 0.5rem;
+	border-radius: 4px;
+}
+
+.todo-list .todo-item .right select{
+	padding: 0.5rem 1rem;
+	padding-left: 0.4rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.todo-list .btn.delete{
+	background: transparent;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0.4rem 0.5rem;
+	margin-left: 0.3rem;
+	font-size: 18px;
+	color: #c0392b;
+	cursor: pointer;
+	outline: none;
+}
+.todo-list .btn.delete:hover{
+	background: #c0392b;
+	color: #fff;
+	border: 1px solid #c0392b;
+}
+.todo-list .btn.delete i{
+    pointer-events: none;
+}
+
+.btn.add{
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	width: 56px;
+	height: 56px;
+	border-radius: 100%;
+	background: #3be;
+	color: #fff;
+	font-size: 32px;
+	font-weight: 300;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: inherit;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 0px 4px 8px -1px rgba(0, 0, 0, 0.24);
+}
+
+.btn.add:hover{
+	background: #2296c1;
+}
+.btn.add.hide{
+	display: none;
+}
+
+
+.modal-backdrop{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.64);
+	top: 0;
+	left: 0;
+	display: none;
+}
+.modal-backdrop.active{
+	display: block;
+}
+.modal{
+	width: 480px;
+	min-height: 280px;
+	background: #fff;
+	box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.45);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 6px;
+	display: none;
+	padding-bottom: 1rem;
+}
+.modal.active{
+	display: block;
+}
+.modal .modal-header{
+	width: 100%;
+	height: 72px;
+	display: flex;
+	align-items: center;
+	padding: 0rem 2rem;
+	border-bottom: 1px solid #ddd;
+}
+.modal .modal-header .left{
+	margin-right: auto;
+}
+.modal .modal-header .right{
+	margin-left: auto;
+}
+.modal .modal-header .btn.close-modal{
+	font-size: 24px;
+	color: #777;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem;
+	outline: none;
+}
+.modal .modal-header .btn.close-modal:hover{
+	color: #444;
+}
+.modal .modal-header .modal-title{
+	font-weight: 500;
+	font-size: 20px;
+	color: #444;
+}
+.modal .modal-body{
+	width: 100%;
+	padding: 0.5rem 1rem 0rem;
+}
+.modal .modal-body .form{
+	width: 100%;
+	padding: 0rem 2rem;
+}
+.modal .modal-body .form .form-header{
+	font-size: 18px;
+	font-weight: 500;
+	color: #555;
+}
+.modal .modal-body .form .form-row{
+	width: 100%;
+	display: block;
+	margin-top: 1rem;
+}
+.modal .modal-body .form .form-row label{
+	font-size: 16px;
+	padding: 0.5rem 0rem;
+	display: block;
+	color: #333;
+}
+.modal .modal-body .form .form-row .control{
+	width: 100%;
+	height: 42px;
+	background: #fff;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	padding: 0rem 0.7rem;
+	display: block;
+	font-size: 16px;
+	font-family: inherit;
+}
+.modal .modal-footer{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	height: 72px;
+	padding: 0rem 2rem;
+	margin-top: 1rem;
+}
+.modal .modal-footer .left{
+	margin-right: auto;
+}
+.modal .modal-footer .right{
+	margin-left: auto;
+}
+.modal .modal-footer .btn.cancel,
+.modal .modal-footer .btn.save{
+	font-weight: 500;
+	padding: 0.7rem 1rem;
+	border: none;
+	min-width: 88px;
+	font-size: 16px;
+	font-family: inherit;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.modal .modal-footer .btn.cancel{
+	background: #ddd;
+	color: #444;
+}
+.modal .modal-footer .btn.cancel:hover{
+	background: #c6c6c6;
+}
+.modal .modal-footer .btn.cancel:active{
+	background: #aaa;
+}
+.modal .modal-footer .btn.save{
+	color: #fff;
+	background: #3be;
+	margin-left: 0.5rem;
+}
+.modal .modal-footer .btn.save:hover{
+	background: #2895be;
+}
+.modal .modal-footer .btn.save:active{
+	background: #2da8d6;
+}
+.modal .modal-footer .btn-group{
+	margin-right: 1rem;
+}
+
+.chartdiv {
+    
+    margin-top: 2rem;
+}
+.chartdiv.hidden{
+	display: none !important;
+}
+
+.chartdiv.active{
+    display: block;
+}
